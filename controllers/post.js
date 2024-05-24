@@ -33,7 +33,8 @@ const index = (req, res) => {
 }
 
 const create = (req, res) => {
-    writeFile('posts', 'json', req.body)
+    writeFile('posts', 'json', req.body);
+    res.send('Post Created');
 }
 
 module.exports = {

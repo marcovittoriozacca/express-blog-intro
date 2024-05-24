@@ -26,8 +26,15 @@ const writeFile = (fileName, ext, data) => {
     fs.writeFileSync(filePath, string);
 }
 
+const getHtml = name => {
+    const pathName = path.join(__dirname, name);
+    const readFile = fs.readFileSync(pathName);
+    return readFile.toString();
+}
+
 module.exports = {
     getPath,
     getFile,
     writeFile,
+    getHtml
 }
