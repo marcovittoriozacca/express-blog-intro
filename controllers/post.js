@@ -7,7 +7,7 @@ const htmlPage = (fileName, ext) => {
     postsFile.forEach(({title, description, tags, img}) => {
         html += `<li>
                     <h2>${title}</h2>
-                    <img src="/${img}" alt="${title}">
+                    <img width="150" src="/${img}" alt="${title}">
                     <p>${description}</p>
                 `;
         tags.forEach(tag => {
