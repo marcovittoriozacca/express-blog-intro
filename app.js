@@ -9,6 +9,8 @@ app.get('/', (req,res) =>{
     res.send('<h1>Benvenuto nel mio blog!</h1>');
 })
 
+app.get('/posts');
+
 app.listen(port, host, () => {
     console.log(`http://${host}:${port}`);
 })
