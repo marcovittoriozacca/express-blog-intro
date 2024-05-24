@@ -28,13 +28,22 @@
     </header>
 
     <body>
-        <h1 class="text-center">Welcome to my Page!</h1>
+        <h1 class="text-center text-4xl">Welcome to my Page!</h1>
+        
+        <div id="work-bg" class="bg-[url(/work.jpg)] h-[20vh] bg-center bg-contain my-5"></div>
+
+
+        <h3 class="text-center text-slate-500">(si, il bg repeat è voluto)</h3>
+    
     </body>
 
 
     <script>
         const locationPath = window.location.href;
-        const postLink = document.getElementById('post-link').setAttribute('href', `${locationPath}posts`);
+        addEventListener("load", () => {
+            const postLink = document.getElementById('post-link').setAttribute('href', `${locationPath}posts`);
+        })
+        
     </script>
 
 </body>
