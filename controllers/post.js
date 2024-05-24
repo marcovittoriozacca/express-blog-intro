@@ -1,4 +1,4 @@
-const {getFile} = require('../utilities.js');
+const {getFile, writeFile} = require('../utilities.js');
 
 const htmlPage = (fileName, ext) => {
     const postsFile = getFile(fileName, ext);
@@ -16,7 +16,6 @@ const htmlPage = (fileName, ext) => {
         html += `</li>`
     });
     html += `</ul>`
-    
     return html;
 }
 
@@ -32,6 +31,12 @@ const index = (req, res) => {
         "json": () => res.type("json").send(jsonFile('posts', 'json'))
     })
 }
+
+const create = (req, res) => {
+    writeFile('posts', 'json', req.body)
+}
+
 module.exports = {
     index,
+    create,
 }

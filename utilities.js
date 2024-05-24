@@ -11,11 +11,23 @@ const getPath = (fileName, ext ) => {
 const getFile = (fileName, ext) => {
     const filePath = getPath(fileName, ext);
     const getFile = fs.readFileSync(filePath);
+
     const parsedFile = JSON.parse(getFile);
+
     return parsedFile;
+}
+
+const writeFile = (fileName, ext, data) => {
+    const filePath = getPath(fileName, ext);
+    const parsedFile = getFile(fileName, ext);
+    const updateData = [...parsedFile, data];
+    console.log(updateData);
+    const string = JSON.stringify(updateData);
+    fs.writeFileSync(filePath, string);
 }
 
 module.exports = {
     getPath,
     getFile,
+    writeFile,
 }
